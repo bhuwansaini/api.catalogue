@@ -2,7 +2,6 @@ package com.bhuwan.api.catalogue.dao;
 
 import com.bhuwan.api.catalogue.model.Api;
 
-import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;

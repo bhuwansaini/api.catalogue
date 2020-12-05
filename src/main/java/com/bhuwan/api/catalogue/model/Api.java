@@ -1,11 +1,13 @@
 package com.bhuwan.api.catalogue.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
+import javax.validation.constraints.NotBlank;
 import java.util.UUID;
 
 public class Api {
     private final UUID id;
+
+    @NotBlank
     private final String name;
 
     public Api(@JsonProperty("id") UUID id,

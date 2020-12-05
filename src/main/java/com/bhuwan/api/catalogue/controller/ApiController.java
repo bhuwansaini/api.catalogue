@@ -2,9 +2,11 @@ package com.bhuwan.api.catalogue.controller;
 
 import com.bhuwan.api.catalogue.model.Api;
 import com.bhuwan.api.catalogue.service.ApiListService;
+import com.sun.istack.internal.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.UUID;
 
@@ -20,7 +22,7 @@ public class ApiController {
     }
 
     @PostMapping
-    public void addApi(@RequestBody Api api){
+    public void addApi(@Valid @NotNull @RequestBody Api api){
         apiListService.addApi(api);
     }
 
@@ -41,7 +43,7 @@ public class ApiController {
     }
 
     @PutMapping(path = "{id}")
-    public void updateApi(@PathVariable("id") UUID id, @RequestBody Api newApi) {
+    public void updateApi(@PathVariable("id") UUID id, @Valid @NotNull @RequestBody Api newApi) {
         apiListService.updateApi(id, newApi);
     }
 }
