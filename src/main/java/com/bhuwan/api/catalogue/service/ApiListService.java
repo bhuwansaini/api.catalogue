@@ -16,7 +16,7 @@ public class ApiListService {
     private final ApiDao apiDao;
 
     @Autowired
-    public ApiListService(@Qualifier("fakeDao") ApiDao apiDao) {
+    public ApiListService(@Qualifier("mssql") ApiDao apiDao) {
         this.apiDao = apiDao;
     }
 
